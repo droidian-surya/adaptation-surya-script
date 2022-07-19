@@ -1,0 +1,1 @@
+deb [arch=arm64 signed-by=/usr/share/keyrings/surya.gpg] http://mirror.bardia.tech/surya bookworm main
