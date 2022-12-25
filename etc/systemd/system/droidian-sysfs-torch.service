@@ -4,6 +4,7 @@ After=org.droidian.Flashlightd.service
 
 [Service]
 Type=simple
+user=droidian
 ExecStart=/opt/droidian-sysfs-torch/bin/droidian-sysfs-torch
 Restart=on-failure
 
