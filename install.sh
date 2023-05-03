@@ -7,6 +7,7 @@ cp -r ./etc/udev/rules.d/70-surya.rules /rootfs/etc/udev/rules.d/
 cp -r ./etc/ofono/main.conf /rootfs/etc/ofono/
 cp -r ./etc/ofono/ril_subscription.conf /rootfs/etc/ofono
 cp -r ./etc/phosh/ /rootfs/etc/
+cp -r ./etc/systemd/system/32to64.service /rootfs/etc/systemd/system/
 cp -r ./etc/systemd/system/ofono.service.d/90-wait.conf /rootfs/etc/systemd/system/ofono.service.d/
 cp -r ./etc/apt/sources.list.d/surya.list /rootfs/etc/apt/sources.list.d
 cp -r ./usr/share/keyrings/surya.gpg /rootfs/usr/share/keyrings/surya.gpg
