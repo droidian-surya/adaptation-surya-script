@@ -1,0 +1,59 @@
+#!/bin/bash
+
+function start() {
+    # audio.primary.sm6150.so
+    mount --bind /android/vendor/lib64/hw/audio.primary.sm6150.so /android/vendor/lib/hw/audio.primary.sm6150.so
+    mount --bind /var/lib/lxc/android/rootfs/vendor/lib64/hw/audio.primary.sm6150.so /var/lib/lxc/android/rootfs/vendor/lib/hw/audio.primary.sm6150.so
+
+    # sound_trigger.primary.sm6150.so
+    mount --bind /android/vendor/lib64/hw/sound_trigger.primary.sm6150.so /android/vendor/lib/hw/sound_trigger.primary.sm6150.so
+    mount --bind /var/lib/lxc/android/rootfs/vendor/lib64/hw/sound_trigger.primary.sm6150.so /var/lib/lxc/android/rootfs/vendor/lib/hw/sound_trigger.primary.sm6150.so
+
+    # libqcomvisualizer.so
+    mount --bind /android/vendor/lib64/soundfx/libqcomvisualizer.so /android/vendor/lib/soundfx/libqcomvisualizer.so
+    mount --bind /var/lib/lxc/android/rootfs/vendor/lib64/soundfx/libqcomvisualizer.so /var/lib/lxc/android/rootfs/vendor/lib/soundfx/libqcomvisualizer.so
+
+    # libqtigef.so
+    mount --bind /android/vendor/lib64/libqtigef.so /android/vendor/lib/libqtigef.so
+    mount --bind /var/lib/lxc/android/rootfs/vendor/lib64/libqtigef.so /var/lib/lxc/android/rootfs/vendor/lib/libqtigef.so
+
+    # libqcompostprocbundle.so
+    mount --bind /android/vendor/lib64/soundfx/libqcompostprocbundle.so /android/vendor/lib/soundfx/lib/qcompostprocbundle.so
+    mount --bind /var/lib/lxc/android/rootfs/vendor/lib64/soundfx/libqcompostprocbundle.so /var/lib/lxc/android/rootfs/vendor/lib/soundfx/libqcompostprocbundle.so
+
+    # libadm.so
+    # mount --bind /android/vendor/lib64/libadm.so /android/vendor/lib/libadm.so
+    # mount --bind /var/lib/lxc/android/rootfs/vendor/lib64/libadm.so /var/lib/lxc/android/rootfs/vendor/lib/libadm.so
+}
+
+function stop() {
+    # audio.primary.sm6150.so
+    umount /android/vendor/lib/hw/audio.primary.sm6150.so -l
+    umount /var/lib/lxc/android/rootfs/vendor/lib/hw/audio.primary.sm6150.so -l
+
+    # sound_trigger.primary.sm6150.so
+    umount /android/vendor/lib/hw/sound_trigger.primary.sm6150.so -l
+    umount /var/lib/lxc/android/rootfs/vendor/lib/hw/sound_trigger.primary.sm6150.so -l
+
+    # libqcomvisualizer.so
+    umount /android/vendor/lib/soundfx/libqcomvisualizer.so -l
+    umount /var/lib/lxc/android/rootfs/vendor/lib/soundfx/libqcomvisualizer.so -l
+
+    # libqtigef.so
+    umount /android/vendor/lib/libqtigef.so -l
+    umount /var/lib/lxc/android/rootfs/vendor/lib/libqtigef.so -l
+
+    # libqcompostprocbundle.so
+    umount /android/vendor/lib/soundfx/lib/qcompostprocbundle.so -l
+    umount /var/lib/lxc/android/rootfs/vendor/lib/soundfx/libqcompostprocbundle.so -l
+
+    # libadm.so
+    # umount /android/vendor/lib/libadm.so -l
+    # umount /var/lib/lxc/android/rootfs/vendor/lib/libadm.so -l
+}
+
+if [ "$1" == "start" ]; then
+   start
+elif [ "$1" == "stop" ]; then
+   stop
+fi

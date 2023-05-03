@@ -1,0 +1,12 @@
+[Unit]
+Description=mount 64 bit libraries on top of 32 bit ones
+After=android-mount.service
+Before=lxc@android.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/32to64 start
+ExecStop=/usr/bin/32to64 stop
+
+[Install]
+WantedBy=multi-user.target
